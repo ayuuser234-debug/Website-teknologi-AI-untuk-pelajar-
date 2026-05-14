@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengenalan Teknologi AI Untuk Pelajar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        accent: '#F7BA1E',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-dark font-sans scroll-smooth">
+    <!-- Navigasi -->
+    <nav class="fixed w-full top-0 left-0 z-50 bg-white/90 backdrop-blur-md shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa fa-robot text-primary text-2xl"></i>
+                <span class="font-bold text-xl text-primary">AI untuk Pelajar</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8">
+                <a href="#beranda" class="font-medium hover:text-primary transition-colors">Beranda</a>
+                <a href="#apa-itu-ai" class="font-medium hover:text-primary transition-colors">Apa itu AI?</a>
+                <a href="#jenis-ai" class="font-medium hover:text-primary transition-colors">Jenis AI</a>
+                <a href="#manfaat" class="font-medium hover:text-primary transition-colors">Manfaat</a>
+                <a href="#contoh" class="font-medium hover:text-primary transition-colors">Contoh Penggunaan</a>
+                <a href="#interaktif" class="font-medium hover:text-primary transition-colors">Fitur Interaktif</a>
+            </div>
+
+            <button class="md:hidden text-dark text-xl" id="menuToggle">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div class="md:hidden hidden bg-white shadow-lg" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-3">
+                <a href="#beranda" class="font-medium py-2 hover:text-primary transition-colors">Beranda</a>
+                <a href="#apa-itu-ai" class="font-medium py-2 hover:text-primary transition-colors">Apa itu AI?</a>
+                <a href="#jenis-ai" class="font-medium py-2 hover:text-primary transition-colors">Jenis AI</a>
+                <a href="#manfaat" class="font-medium py-2 hover:text-primary transition-colors">Manfaat</a>
+                <a href="#contoh" class="font-medium py-2 hover:text-primary transition-colors">Contoh Penggunaan</a>
+                <a href="#interaktif" class="font-medium py-2 hover:text-primary transition-colors">Fitur Interaktif</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 bg-gradient-to-br from-primary/10 to-secondary/10" id="beranda">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 space-y-6">
+                    <h1 class="text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-tight text-shadow">
+                        Kenali Dunia <span class="text-primary">Kecerdasan Buatan (AI)</span> Untuk Masa Depanmu
+                    </h1>
+                    <p class="text-lg text-gray-600">
+                        Pelajari apa itu AI, cara kerjanya, manfaatnya, dan bagaimana teknologi ini mengubah dunia serta cara kita belajar sehari-hari.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#apa-itu-ai" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                            Mulai Belajar
+                        </a>
+                        <a href="#interaktif" class="bg-white hover:bg-gray-100 text-dark border border-gray-200 px-8 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all">
+                            Coba Fitur Interaktif
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <img src="https://picsum.photos/id/1/800/500" alt="Ilustrasi Teknologi AI" class="rounded-2xl shadow-2xl w-full">
+                    <div class="absolute -bottom-5 -left-5 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-secondary/20 p-2 rounded-lg">
+                                <i class="fa fa-lightbulb-o text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Tahukah kamu?</p>
+                                <p class="font-semibold">AI dikembangkan sejak tahun 1956!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apa Itu AI -->
+    <section class="py-16 bg-white" id="apa-itu-ai">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-3">Apa Itu Kecerdasan Buatan (AI)?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Pahami definisi sederhana dan mudah dimengerti oleh pelajar</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10 items-center">
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/id/2/600/400" alt="Penjelasan AI" class="rounded-xl shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2 space-y-5">
+                    <h3 class="text-2xl font-semibold text-primary">Definisi Sederhana</h3>
+                    <p class="text-lg leading-relaxed">
+                        <strong>Kecerdasan Buatan atau Artificial Intelligence (AI)</strong> adalah cabang ilmu komputer yang membuat mesin atau perangkat lunak mampu melakukan pekerjaan yang biasanya membutuhkan kecerdasan manusia.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        AI dirancang agar mesin bisa berpikir, belajar, memecahkan masalah, memahami bahasa, mengenali gambar, dan mengambil keputusan seperti cara manusia melakukannya.
+                    </p>
+                    
+                    <div class="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg mt-6">
+                        <h4 class="font-semibold text-lg mb-2">Contoh Kemampuan AI:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2"><i class="fa fa-check-circle text-primary"></i> Mengenali wajah dan suara</li>
+                            <li class="flex items-center gap-2"><i class="fa fa-check-circle text-primary"></i> Menerjemahkan bahasa secara instan</li>
+                            <li class="flex items-center gap-2"><i class="fa fa-check-circle text-primary"></i> Membuat gambar atau tulisan</li>
+                            <li class="flex items-center gap-2"><i class="fa fa-check-circle text-primary"></i> Memberikan rekomendasi film atau lagu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jenis AI -->
+    <section class="py-16 bg-gray-50" id="jenis-ai">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-3">Jenis-Jenis Teknologi AI</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Berdasarkan kemampuan dan fungsinya, AI dibagi menjadi beberapa kategori</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Kartu Jenis 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-lg flex items-center justify-center text-xl mb-5">
+                        <i class="fa fa-cube"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI Semut (Kecerdasan Sempit)</h3>
+                    <p class="text-gray-600 mb-3">
+                        AI yang dirancang hanya untuk melakukan satu tugas spesifik saja. Ini adalah jenis AI yang kita gunakan sehari-hari saat ini.
+                    </p>
+                    <p class="text-sm font-medium text-primary">Contoh: Asisten Google, Siri, Algoritma Rekomendasi YouTube</p>
+                </div>
+
+                <!-- Kartu Jenis 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-secondary/10 text-secondary rounded-lg flex items-center justify-center text-xl mb-5">
+                        <i class="fa fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI Umum (Kecerdasan Umum)</h3>
+                    <p class="text-gray-600 mb-3">
+                        AI yang memiliki kemampuan memahami, belajar, dan menerapkan pengetahuan untuk berbagai macam tugas, sama seperti manusia. Masih dalam pengembangan.
+                    </p>
+                    <p class="text-sm font-medium text-secondary">Contoh: Robot cerdas yang bisa mengerjakan berbagai pekerjaan manusia</p>
+                </div>
+
+                <!-- Kartu Jenis 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-accent/10 text-accent rounded-lg flex items-center justify-center text-xl mb-5">
+                        <i class="fa fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI Super (Kecerdasan Super)</h3>
+                    <p class="text-gray-600 mb-3">
+                        AI yang melebihi kecerdasan manusia dalam segala hal. Jenis ini masih berupa konsep teoretis dan belum ada saat ini.
+                    </p>
+                    <p class="text-sm font-medium text-accent">Contoh: Teknologi masa depan yang jauh lebih canggih dari sekarang</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-semibold mb-4 text-center">Teknologi di Balik AI</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="border border-gray-200 rounded-lg p-4 text-center hover:border-primary transition-colors">
+                        <h4 class="font-medium text-primary mb-2">Machine Learning</h4>
+                        <p class="text-sm text-gray-600">Mesin belajar dari data tanpa diprogram secara rinci</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 text-center hover:border-primary transition-colors">
+                        <h4 class="font-medium text-primary mb-2">Deep Learning</h4>
+                        <p class="text-sm text-gray-600">Pembelajaran mendalam menggunakan jaringan saraf tiruan</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 text-center hover:border-primary transition-colors">
+                        <h4 class="font-medium text-primary mb-2">Natural Language Processing</h4>
+                        <p class="text-sm text-gray-600">Memahami dan memproses bahasa manusia</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 text-center hover:border-primary transition-colors">
+                        <h4 class="font-medium text-primary mb-2">Computer Vision</h4>
+                        <p class="text-sm text-gray-600">Mengenali dan memahami gambar atau video</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manfaat AI -->
+    <section class="py-16 bg-white" id="manfaat">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-3">Manfaat AI untuk Pelajar</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Bagaimana teknologi ini membantu kamu dalam belajar dan kegiatan sehari-hari</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex gap-4">
+                    <div class="text-primary text-3xl mt-1"><i class="fa fa-book"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Membantu Belajar</h3>
+                        <p class="text-gray-600">Menjelaskan materi pelajaran yang sulit dengan bahasa yang mudah dimengerti, kapan saja dan di mana saja.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="text-primary text-3xl mt-1"><i class="fa fa-pencil-square-o"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Mempermudah Tugas</h3>
+                        <p class="text-gray-600">Membantu mencari referensi, menyusun kerangka tulisan, mengecek tata bahasa, dan memperbaiki kesalahan tulisan.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="text-primary text-3xl mt-1"><i class="fa fa-language"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Menerjemahkan Bahasa</h3>
+                        <p class="text-gray-600">Membantu memahami buku, artikel, atau video berbahasa asing secara instan dan akurat.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+<div class="text-primary text-3xl mt-1"><i class="fa fa-lightbulb-o"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Mengembangkan Kreativitas</h3>
+                        <p class="text-gray-600">Memberikan ide baru, membantu membuat desain gambar, puisi, cerita, hingga presentasi yang menarik.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="text-primary text-3xl mt-1"><i class="fa fa-clock-o"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Menghemat Waktu</h3>
+                        <p class="text-gray-600">Mengerjakan tugas berulang dengan cepat sehingga kamu punya lebih banyak waktu untuk mempelajari hal baru.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="text-primary text-3xl mt-1"><i class="fa fa-laptop"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Mempersiapkan Masa Depan</h3>
+                        <p class="text-gray-600">Mengenal teknologi ini sejak dini akan membantumu siap menghadapi dunia kerja dan karier di masa depan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contoh Penggunaan AI -->
+    <section class="py-16 bg-gray-50" id="contoh">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-3">Contoh Penggunaan AI Sehari-hari</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ternyata kamu sudah sering bertemu AI dalam kehidupanmu sehari-hari</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fa fa-video-camera"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">YouTube & Netflix</h3>
+                    <p class="text-gray-600 text-sm">AI menyarankan video atau film yang sesuai dengan kesukaanmu berdasarkan riwayat tontonan.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-2xl mb-4">
+                        <i class="fa fa-map-marker"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Google Maps</h3>
+                    <p class="text-gray-600 text-sm">AI menghitung rute tercepat, memperkirakan waktu perjalanan, dan memperingatkan kemacetan lalu lintas.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-2xl mb-4">
+                        <i class="fa fa-camera"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Kamera HP</h3>
+                    <p class="text-gray-600 text-sm">AI membantu mempertajam gambar, mengenali objek, wajah, dan mempercantik foto secara otomatis.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 text-2xl mb-4">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Penerjemah Bahasa</h3>
+                    <p class="text-gray-600 text-sm">AI mengubah tulisan atau ucapan dari satu bahasa ke bahasa lain dengan sangat cepat dan tepat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitur Interaktif: Kuis -->
+    <section class="py-16 bg-gradient-to-br from-primary/10 to-secondary/10" id="interaktif">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-10">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-3">Uji Pengetahuanmu!</h2>
+                <p class="text-gray-600 max-w-xl mx-auto">Ayo jawab pertanyaan sederhana ini untuk melihat sejauh mana kamu sudah paham tentang AI</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div id="kuis">
+                    <h3 id="pertanyaan" class="text-xl font-semibold mb-6 text-center text-dark"></h3>
+                    <div id="pilihan" class="space-y-4 mb-6"></div>
+                    <div id="hasil" class="p-4 rounded-lg text-center font-medium hidden mb-4"></div>
+                    <button id="tombolSelanjutnya" class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 rounded-lg shadow-md transition-all transform hover:scale-[1.02] hidden">
+                        Pertanyaan Berikutnya
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <i class="fa fa-robot text-3xl text-primary mb-2"></i>
+                <h3 class="text-xl font-bold mt-2">Pengenalan Teknologi AI untuk Pelajar</h3>
+            </div>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm">
+                Belajar mengenal teknologi masa depan sejak dini agar siap menghadapi kemajuan zaman. Semoga halaman ini bermanfaat!
+            </p>
+            <div class="mt-6 pt-4 border-t border-gray-700 text-gray-500 text-xs">
+                © 2025 | Dibuat dengan ❤️ untuk mendukung pendidikan pelajar Indonesia
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Menu Navigasi Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Efek Perubahan Warna Navbar Saat Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                navbar.classList.add('shadow-md', 'bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-md', 'bg-white/95');
+            }
+        });
+
+        // Data Kuis
+        const soalKuis = [
+            {
+                pertanyaan: "Apa kepanjangan dari AI?",
+                pilihan: ["Automatic Internet", "Artificial Intelligence", "Auto Instruction", "Artificial Internet"],
+                benar: 1
+            },
+            {
+                pertanyaan: "Jenis AI yang paling sering kita gunakan sehari-hari disebut?",
+                pilihan: ["AI Umum", "AI Super", "AI Sempit", "AI Masa Depan"],
+                benar: 2
+            },
+            {
+                pertanyaan: "Manakah yang BUKAN termasuk manfaat AI bagi pelajar?",
+                pilihan: ["Membantu tugas sekolah", "Membuat kita malas berpikir", "Menerjemahkan bahasa", "Mencari ide baru"],
+                benar: 1
+            },
+            {
+                pertanyaan: "Teknologi AI yang dapat mengenali gambar disebut?",
+                pilihan: ["Computer Vision", "Natural Language", "Machine Writing", "Internet of Things"],
+                benar: 0
+            }
+        ];
+
+        let nomorSoal = 0;
+        const teksPertanyaan = document.getElementById('pertanyaan');
+        const wadahPilihan = document.getElementById('pilihan');
+        const tampilHasil = document.getElementById('hasil');
+        const tombolLanjut = document.getElementById('tombolSelanjutnya');
+
+        // Tampilkan Soal
+        function tampilkanSoal() {
+            tampilHasil.classList.add('hidden');
+            tombolLanjut.classList.add('hidden');
+            wadahPilihan.innerHTML = '';
+
+            const soalSekarang = soalKuis[nomorSoal];
+            teksPertanyaan.textContent = soalSekarang.pertanyaan;
+
+            soalSekarang.pilihan.forEach((opsi, indeks) => {
+                const tombol = document.createElement('button');
+                tombol.textContent = opsi;
+                tombol.className = 'w-full text-left p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-all';
+                tombol.addEventListener('click', () => cekJawaban(indeks));
+                wadahPilihan.appendChild(tombol);
+            });
+        }
+
+        // Cek Jawaban
+        function cekJawaban(dipilih) {
+            const semuaTombol = wadahPilihan.querySelectorAll('button');
+            semuaTombol.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.remove('hover:border-primary', 'hover:bg-primary/5');
+            });
+
+            if (dipilih === soalKuis[nomorSoal].benar) {
+                tampilHasil.textContent = "✅ Jawaban Kamu BENAR!";
+                tampilHasil.className = "bg-green-100 text-green-700 p-4 rounded-lg text-center font-medium mb-4";
+                semuaTombol[dipilih].classList.add('bg-green-100', 'border-green-400');
+            } else {
+                tampilHasil.textContent = `❌ Kurang tepat. Jawaban yang benar: ${soalKuis[nomorSoal].pilihan[soalKuis[nomorSoal].benar]}`;
+                tampilHasil.className = "bg-red-100 text-red-700 p-4 rounded-lg text-center font-medium mb-4";
+                semuaTombol[dipilih].classList.add('bg-red-100', 'border-red-400');
+                semuaTombol[soalKuis[nomorSoal].benar].classList.add('bg-green-100', 'border-green-400');
+            }
+
+            tampilHasil.classList.remove('hidden');
+            tombolLanjut.classList.remove('hidden');
+        }
+
+        // Pindah ke Soal Berikutnya
+        tombolLanjut.addEventListener('click', () => {
+            nomorSoal++;
+            if (nomorSoal < soalKuis.length) {
+                tampilkanSoal();
+            } else {
+                teksPertanyaan.textContent = "🎉 Selamat! Kamu sudah menyelesaikan seluruh kuis!";
+                wadahPilihan.innerHTML = '<p class="text-center text-gray-600">Teruslah belajar tentang teknologi AI agar makin paham ya!</p>';
+                tombolLanjut.style.display = 'none';
+            }
+        });
+
+        // Jalankan soal pertama saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', tampilkanSoal);
+        <p>link google drive :
+         <a hreaf="https://drive.google.com/file/d/1Lck5MMtuz5jp3jxHdHmv-VZjnqNBKzRh/view?usp=drivesdk">klik disini</a>
+    </script>
+</body>
+
+</html>
